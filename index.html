@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .circle {
+        width: 10px;
+        height: 10px;
+        position: relative;
+      }
+
+      .circle-Item {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgb(20, 189, 219);
+        transform: rotate(calc(36deg * var(--shape))) translateX(40px);
+        animation: animate 2s linear infinite;
+        animation-delay: calc(0.2s * var(--shape));
+        box-shadow: 0 0 5px rgb(12, 207, 207), 0 0 10px rgb(8, 216, 206);
+        filter: hue-rotate(calc(36deg * var(--shape)));
+      }
+
+      @keyframes animate {
+        0%,
+        40% {
+          opacity: 0;
+        }
+
+        90%,
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle">
+        <div class="circle-Item" style="--shape: 1"></div>
+        <div class="circle-Item" style="--shape: 2"></div>
+        <div class="circle-Item" style="--shape: 3"></div>
+        <div class="circle-Item" style="--shape: 4"></div>
+        <div class="circle-Item" style="--shape: 5"></div>
+        <div class="circle-Item" style="--shape: 6"></div>
+        <div class="circle-Item" style="--shape: 7"></div>
+        <div class="circle-Item" style="--shape: 8"></div>
+        <div class="circle-Item" style="--shape: 9"></div>
+        <div class="circle-Item" style="--shape: 10"></div>
+      </div>
+    </div>
+  </body>
+</html>
